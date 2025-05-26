@@ -63,7 +63,7 @@ package.json
 
 ```
 {
-  "name": "@test",    #包名称
+  "name": "@ygs-code/test",    #包名称和注册名要对应上
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
@@ -82,6 +82,8 @@ package.json
 ```
 
 ### 项目根目录中添加 .npmrc 文件
+
+@ygs-code/test        @ygs-code 只是私有报名注册一个命名而已
 
 ```
 @ygs-code:registry=https://npm.pkg.github.com/
@@ -157,5 +159,5 @@ https://github.com/users/ygs-code/packages/npm/package/github-pk
 npm i  包名
 
 ```
-npm i @test
+npm i @ygs-code/test
 ```
