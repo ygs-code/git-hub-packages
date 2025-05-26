@@ -1,5 +1,3 @@
-
-
 # 1. 打开 GitHub Token 页面：
 
 👉 https://github.com/settings/tokens
@@ -16,17 +14,11 @@
 
 然后创建 **Select scopes**  全部 打勾。
 
-
-
 打勾完会生成一个 token
 
 ```
 ghp_Lg9wpgAaKtcRRx880elDqaI0zxxxxxxxx
 ```
-
-
-
-
 
 # 安装 gh_2.73.0_windows_amd64
 
@@ -36,14 +28,10 @@ ghp_Lg9wpgAaKtcRRx880elDqaI0zxxxxxxxx
 gh auth login
 ```
 
-
-
 1. 按提示打开浏览器，访问：
    👉 https://github.com/login/device
 2. 粘贴刚才的代码，点击“Continue”
 3. 登录你的 GitHub 账户并授权 GitHub CLI
-
-
 
 要查看你是否已经通过 GitHub CLI 登录了 GitHub，可以在命令行中运行以下命令：
 
@@ -65,11 +53,7 @@ gh auth status
 You are not logged into any GitHub hosts. To log in, run: gh auth login
 ```
 
-
-
-也可以用刚才的token登录。登录完成之后 
-
-
+也可以用刚才的token登录。登录完成之后
 
 # 3.新建一个npm 包项目
 
@@ -97,10 +81,6 @@ package.json
 
 ```
 
-
-
-
-
 ### 项目根目录中添加 .npmrc 文件
 
 ```
@@ -113,39 +93,31 @@ package.json
 
 _authToken= 是刚才创建的token  ghp_Lg9wpgAaKtcRRx880elDqaI0zxxxxxxxx
 
-
-
-
-
 ### 然后运行   npm publish    即可发包
 
 ```
  npm publish  
 ```
 
-
-
 ### 常见的 NPM 钩子函数（生命周期脚本）
 
 以下是一些常用的 NPM 生命周期钩子：
 
-| 钩子名称         | 触发时机说明                                     |
-| ---------------- | ------------------------------------------------ |
-| `preinstall`     | 在依赖安装之前执行                               |
-| `install`        | 安装依赖时执行                                   |
-| `postinstall`    | 安装依赖之后执行                                 |
-| `preuninstall`   | 卸载包之前执行                                   |
-| `uninstall`      | 卸载包时执行                                     |
-| `postuninstall`  | 卸载包之后执行                                   |
-| `prepublishOnly` | 仅在 `npm publish` 之前执行                      |
+| 钩子名称           | 触发时机说明                                         |
+| ------------------ | ---------------------------------------------------- |
+| `preinstall`     | 在依赖安装之前执行                                   |
+| `install`        | 安装依赖时执行                                       |
+| `postinstall`    | 安装依赖之后执行                                     |
+| `preuninstall`   | 卸载包之前执行                                       |
+| `uninstall`      | 卸载包时执行                                         |
+| `postuninstall`  | 卸载包之后执行                                       |
+| `prepublishOnly` | 仅在 `npm publish` 之前执行                        |
 | `prepare`        | 在 `install` 和 `publish` 之前都执行，常用于构建 |
-| `pretest`        | 在运行 `npm test` 之前执行                       |
-| `test`           | 运行测试命令                                     |
-| `posttest`       | 测试完成后执行                                   |
+| `pretest`        | 在运行 `npm test` 之前执行                         |
+| `test`           | 运行测试命令                                         |
+| `posttest`       | 测试完成后执行                                       |
 
 ### 示例：在 `package.json` 中使用钩子
-
-
 
 ```
 {
@@ -161,21 +133,13 @@ _authToken= 是刚才创建的token  ghp_Lg9wpgAaKtcRRx880elDqaI0zxxxxxxxx
 
 ```
 
-
-
 # 4.查看已发的包
 
 https://github.com/users/ygs-code/packages/npm/package/github-pk
 
-
-
 [查看包 - GitHub 文档](https://docs.github.com/zh/packages/learn-github-packages/viewing-packages)
 
 [关于 GitHub Packages 的权限 - GitHub 文档](https://docs.github.com/zh/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)
-
-
-
-
 
 # 5.使用包
 
@@ -188,13 +152,10 @@ https://github.com/users/ygs-code/packages/npm/package/github-pk
  
 ```
 
-###  安装包
+### 安装包
 
 npm i  包名
 
 ```
-npm i @ygs-code/github-pk
+npm i @test
 ```
-
-
-
