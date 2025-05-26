@@ -201,3 +201,39 @@ npm i @ygs-code/test
 
  git token  是 github_pat_11AEY5WNQ0iK3zeJTWxxxxxxx
 
+
+
+@github.com/ygs-code/private.git 原始 仓库地址是 https://github.com/ygs-code/private/
+
+```
+git clone https://x-access-token:github_pat_11AEY5WNQ0iK3zeJTWxxxxxxx@github.com/ygs-code/private.git
+```
+
+
+
+这样 就可以克隆到私有库了
+
+## 方法二：使用 Deploy Key（适合只读访问）
+
+1. 在私有仓库中生成 SSH Key（可以用 `ssh-keygen`）
+2. 将 **公钥** 添加到私有仓库的 **Deploy Keys**
+3. 将 **私钥** 添加到主仓库的 GitHub variables （如 `PRIVATE_REPO_SSH_KEY`）
+4. 在 GitHub Actions 中配置 SSH：
+5. 在本地生成一个ssh 然后配置到 脚本中，但是ssh 经常容易失效问题不建议使用
+
+```
+- name: Setup SSH
+  run: |
+    mkdir -p ~/.ssh
+    echo "${{ variables.PRIVATE_REPO_SSH_KEY }}" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+- name: Clone private repo
+   # 然后用ssh 克隆
+  run: git clone git@github.com:your-org/your-private-repo.git 
+
+```
+
+
+
