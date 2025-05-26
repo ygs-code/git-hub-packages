@@ -161,3 +161,29 @@ npm i  包名
 ```
 npm i @ygs-code/test
 ```
+
+
+
+# 6.如果你要在 GitHub 中克隆一个**私有仓库**，你需要提供身份验证信息。
+
+
+
+
+
+## 方法一：使用 GitHub Personal Access Token（推荐）
+
+### 步骤：
+
+1. **生成 Token：**
+   - 进入 GitHub Developer Settings
+   - 点击 **"Fine-grained tokens"** 或 **"Classic tokens"**
+   - 生成一个具有 `repo` 权限的 Token
+   - 推选 Fine-grained tokens 可以选择对应的仓库生成token ，  Classic tokens 是所有仓库.
+   - 然后选择 Only select repositoriesSelect at least one repository. Max 50 repositories. Also includes public repositories (read-only).
+   - 然后选择指定的仓库生成token
+2. **添加到 GitHub Secrets：**
+   - 打开你的主仓库
+   - 进入 **Settings >  Environments  > New environment> Secrets and variables > **
+   - Secrets 为 微软云的 流水线token
+   - variables 为变量
+   - 添加一个新的 variables ，例如命名为 `PRIVATE_REPO_TOKEN`
