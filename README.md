@@ -187,3 +187,17 @@ npm i @ygs-code/test
    - Secrets 为 微软云的 流水线token
    - variables 为变量
    - 添加一个新的 variables ，例如命名为 `PRIVATE_REPO_TOKEN`
+
+
+
+1. **在 GitHub Actions 中使用：**
+
+```
+- name: Clone private repo
+  run: |
+    git clone https://x-access-token:github_pat_11AEY5WNQ0iK3zeJTWxxxxxxx@github.com/ygs-code/private.git
+
+```
+
+ git token  是 github_pat_11AEY5WNQ0iK3zeJTWxxxxxxx
+
